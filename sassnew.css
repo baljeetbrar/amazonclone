@@ -811,6 +811,66 @@ input[type=radio] {
   height: 500px;
 }
 
+.footer-vertical-column {
+  max-width: 1000px;
+  display: flex;
+  margin: auto;
+  gap: 0px 130px;
+  padding-top: 30px;
+  line-height: 2;
+}
+
+.footer-head {
+  font-family: inherit;
+  color: #f3f3f3;
+  font-size: 16px;
+  margin: 6px 0 14px 0;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.nav-a {
+  color: #ddd;
+  word-break: break-word;
+}
+
+.nav-a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-item {
+  border-top: 1px solid #3a4553;
+  margin-top: 20px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 0px 25px;
+}
+
+.nav-base-logo {
+  background: url(./Images/nav-logo.png)-10px -90px no-repeat;
+  width: 76px;
+  height: 23px;
+  margin: 15px auto;
+}
+
+.nav-globe-img {
+  background: url(./Images/flag-logo.png)-155px -104px no-repeat;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 0;
+}
+
+.nav-base-lang {
+  color: white;
+}
+
+.nav-base-button {
+  border: 1px solid #9b9b9b;
+  padding: 15px 30px;
+}
+
 @media screen and (min-width: 1395px) {
   .nav-wrapper-container > li:nth-child(1) {
     width: 23%;
