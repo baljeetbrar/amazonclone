@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="2"> -->
+    <title>Test File</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        .language-selector {
+            display: block;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-around;
+            background-color: white;
+            width: 250px;
+            height: auto;
+            border-radius: 4px;
+            line-height: 2;
+            padding-left: 0.8rem;
+            z-index: 1;
+          }
+  
+
+input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+ .lang-english[type=radio]:hover, .lang-french[type=radio]:hover{
+  accent-color: orange !important; 
+ }
+ .lang-name::after{
+  content: "";
+    display: block;
+    width: 174px;
+    height: 1px;
+    background: #d5d5d5;
+    bottom: -8px;
+    position: absolute;
+    left: 0px;
+ }
+.lang-name,.shopping-wrap{
+  position: relative;
+}
+#learn-more{
+  font-size: 13px;
+    text-align: right;
+    margin-left: 28px;
+}
+
+.language-selector::after{
+  content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-bottom: 15px solid rgb(255, 255, 255);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    top: -10px;
+    left: 22%;
+}
+.shopping-flag{
+  background: url(./Images/flag-logo.png)-2px -540px no-repeat;
+    position: absolute;
+    width: 29px;
+    height: 21px;
+    left: -11px;
+    bottom: 53px;
+    margin-left: 15px;
+}
+.shop{
+  margin-left: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <div class="lang-english">
+          <input selected="selected" type="radio" name="lang-english" id="lang-english">
+          <span class="lang-name">English - EN</span>
+        </div>
+        <div class="lang-French">
+          <input type="radio" name="lang-english" id="lang-english">
+          <span >French - FR</span>
+          <br>
+           <a href="#"><span class="lang-name" id="learn-more"> Learn More</span></a> 
+        </div>
+        <div class="shopping-wrap"> 
+            <span class="shopping-flag"></span>
+            <div class="shop">
+              <span >You are shopping on </span><br>
+              <span>Amazon.ca</span><br>
+            </div>
+            <a href="#"><span id="learn-more">Change country/region.</span></a> 
+        </div>
+    </div>
+      
+</body>
+</html>

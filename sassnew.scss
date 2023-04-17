@@ -1,0 +1,827 @@
+$primary: #131921;
+$secondary: #23303E;
+$light-bg:  #485768;
+$dark-bg: #131A22;
+$light-color:#f3f3f3;
+$search-color: #F3A846;
+$container-background: white;
+
+$hover-color:white;
+$arrow-color: #acaaaa;
+$link-color: #05a;
+$link-hover:#C7511F;
+$after-line: #e2dddd;
+
+$xl-container: 1395px;
+$lg-container: 1395px;
+$md-container:  768px;
+$sm-container: 540px;
+// *{
+//     outline: 1px solid red;
+//     background: black;
+//     color: green;
+// }
+@mixin full-width{
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 1400px;
+}
+@mixin hover-border{
+    border: 1px solid $hover-color;
+    border-radius: 2px;
+}
+
+@mixin button{
+    color: black;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+@mixin arrow-down-sprite{
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top: 4px solid #acaaaa;
+    border-bottom: 0;
+}
+
+@mixin lg-container{
+    width: $lg-container;
+}
+@mixin arrow-top{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-bottom: 15px solid rgb(255, 255, 255);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+@mixin after-line{
+    content: "";
+    display: block;
+    position: absolute;
+}
+@mixin large-container{
+    width: $lg-container;
+    padding: 0px 10px;
+}
+@mixin xl-container{
+    width: $xl-container;
+    padding: 0px 14px;
+}
+@mixin fluid-container{
+    ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 15px 15px;
+    }
+    li{
+        padding: 20px 29px;
+        width: 20%;
+        background-color: $container-background;
+    }
+    img{
+        width: 100%;
+        height: 250px;
+    }
+    .flex-fluid-link{
+        padding: 15px 0px;
+    }
+    .flex-fluid-link:hover{
+        text-decoration: underline;
+    }
+}
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px ;
+}
+a{
+    text-decoration: none;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: $light-color;
+    
+}
+.nav-wrapper{
+    background-color: $primary;
+    color: white;
+    padding: 5px 10px;
+    height: 50px;
+
+}
+.nav-wrapper a{
+    color: white;
+}
+.nav-wrapper-container>li:nth-child(1){
+    width: 23%; 
+}
+.nav-wrapper-container>li:nth-child(2){
+    width: 48%;
+}
+.nav-wrapper-container>li:nth-child(3){
+    width: 25%;  
+}
+.nav-wrapper-container, .navbar-list-left, .navbar-list-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-search-form {
+    display: flex;
+    justify-content: flex-start;
+}
+.navbar-list-left>li {
+    border: 1px solid transparent;
+    padding: 3px 7px;
+}
+.navbar-list-left>li:hover, .navbar-list-right>li:hover{
+    @include hover-border;
+}
+.logo-info, .address-info{
+    position: relative;
+}
+.nav-logo-sprite{
+    background: url(./Images/nav-logo.png) -3px -32px no-repeat;
+    background-size: 300px;
+    width: 128px;
+    height: 40px;
+}  
+.nav-sprite{
+    font-size: 13.5px;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+}
+.nav-sub-sprite{
+    background: url(./Images/nav-logo.png) -70px -379px no-repeat;
+    width: 16px;
+    height: 18px;
+    position: absolute;
+    top: 22px;
+    left: 5px;
+
+} 
+.address-bar{
+    padding: 4px 15px;
+}
+.search-left{
+    background-color: $light-color;
+    background-image: none;
+    border-left: 1px solid $light-color;
+    border-top: 1px solid $light-color;
+    border-bottom: 1px solid $light-color;
+    width:10%;
+    height: 33px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: black;
+    text-align: center;
+    position: relative;
+    
+}
+.dropdown-menu-label{
+    line-height: 2.5;
+    padding-right: 0.7rem;
+}
+.nav-search-label-sprite{
+    background: url(./Images/nav-logo.png)-177px -351px no-repeat;
+    width: 26px;
+    height: 24px;
+    position: absolute;
+    top: 3px;
+    right: 6px;
+}
+.nav-search-dropdown{
+    display: block;
+    position: absolute;
+    height: 33px;
+    width: 68px;
+    outline: 0;
+    cursor: grab;
+    visibility: visible;
+    opacity: 0;
+    border: 0;
+    top: 0px;
+}
+.search-fill{
+    width: 80%;
+}
+.search-fill [type=search]{
+    width: 100%;
+    height: 35px;
+    outline: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 1px solid #c9c9c9;
+    border-right: 1px solid white;
+}
+.search-right{
+    width: 10%;
+    position: relative;
+}
+.search-right [type=submit]{
+    background: url(./Images/nav-logo.png)2px -282px no-repeat;
+    width: 50px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #F3A846;
+    outline: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: 1px solid white !important;
+    border: none;
+}
+.navbar-list-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.navbar-list-right>li {
+    border: 1px solid transparent;
+    padding: 7px 25px;
+}
+.flag-container{
+    position: relative;
+    padding: 7px 6px;
+}
+
+.icp-nav-flag{
+    background: url(./Images/flag-logo.png) -2px -122px no-repeat;
+    width: 32px;
+    height: 20px;
+    position: absolute;
+    top: 9px;
+    left: -18px;
+}
+.flag-label{
+    position: relative;
+    bottom: -6px;
+    right: -10px;
+}
+.nav-arrow-sprite{
+    @include arrow-down-sprite;
+    position: absolute;
+    bottom: 3px;
+    right: -16px;
+    
+}
+.welcome, .sign-in-tag, #return{
+    font-size: 12px;
+}
+.address, .account-list, #order{
+    font-size: 14px;
+    font-weight: 700px;
+}
+.sign-in-info{
+    position: relative;
+    // padding: 3px 25px
+}
+.sign-in-arrow{
+    @include arrow-down-sprite;
+    position: absolute;
+    bottom: 2px;
+    right: -12px;
+}
+.nav-cart-count-container{
+    position: relative;
+    padding: 16px 20px;
+}
+
+#nav-cart-count{
+    position: absolute;
+    left: 2px;
+    right: auto;
+    top: 3px;
+    color: $search-color;
+    font-weight: 800;
+}
+.nav-cart-icon{
+    background: url(https://m.media-amazon.com/images/G/15/gno/sprites/nav-sprite-global-2x-hm-dsk-reorg._CB405936603_.png);
+    background-position: 79px 80px;
+    background-size: 200px;
+    position: absolute;
+    width: 32px;
+    height: 47px;
+    bottom: -15px;
+    left: -10px;
+}
+.nav-cart-text-container{
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    bottom: 0px;
+    right: -10px;
+    font-weight: 700;
+}
+// ********** Main Navbar Wrapper End ********** 
+
+// ********* Hover element Start *************
+.language-selector {
+    display: none;
+    width: 220px;
+    color: black !important;
+    background-color: rgb(255, 255, 255);
+    float: right;
+    padding: 8px 16px;
+    position: absolute;
+    right: 155px;
+    top: 52px;
+    z-index: 2;
+    border-radius: 4px;
+    line-height: 3;
+  }
+.language-selector a{
+    color: $link-color;
+}
+.language-selector a:hover{
+    text-decoration: underline;
+    color: $search-color;
+}
+input[type="radio"] {
+    margin-right: 0.5rem;
+}
+.lang-english[type=radio]:hover, .lang-french[type=radio]:hover{
+    accent-color: $search-color !important; 
+}
+.lang-name::after{
+content: "";
+    display: block;
+    width: 174px;
+    height: 1px;
+    background: #d5d5d5;
+    bottom: -8px;
+    position: absolute;
+    left: 0px;
+}
+.lang-name,.shopping-wrap{
+    position: relative;
+
+}
+#learn-more{
+    font-size: 13px;
+    text-align: right;
+    margin-left: 28px;
+}
+
+.language-selector::after{
+    @include arrow-top;
+    top: -8px;
+    left: 22%;
+}
+.shopping-flag{
+    background: url(./Images/flag-logo.png)-3px -542px no-repeat;
+    position: absolute;
+    width: 27px;
+    height: 18px;
+    left: -18px;
+    bottom: 55px;
+    margin-left: 14px;
+}
+.shop{
+    margin-left: 30px;
+    line-height: 1.4;
+}
+.my-hover-class:hover  .my-hover-show{
+    display: block;
+}
+
+.log-in{
+    display: none;
+    width: 400px;
+    color: black !important;
+    background-color: rgb(255, 255, 255);
+    float: right;
+    padding: 8px 30px;
+    position: absolute;
+    right: 100px;
+    top: 52px;
+    z-index: 2;
+    border-radius: 4px;
+}
+
+    
+.login-btn{
+    display: block;
+    height: 30px;
+    margin: auto;
+    padding: 0px 100px;
+    cursor: pointer;
+    outline: 0;
+    border: 1px solid;
+    color: black;
+    background-color: $search-color;
+    border-color: #c89411 #b0820f #99710d;
+    font-family: inherit;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    
+}
+.login-top{
+    text-align: center;
+    margin-bottom: 20px;
+  
+ }
+ .login-top::after{
+   @include after-line;
+   top: 70px;
+   left: 30px;
+   width: 400px;
+   border: 0.8px solid $after-line;  
+
+ }
+.log-in::after{
+    @include arrow-top;
+    top: -8px;
+    right: 94px;
+}
+.your-list{
+    float: left;
+    line-height: 1.7;
+    
+}
+.your-account-list{
+    float: right;
+    line-height: 1.7;
+    border-left: 1px solid $after-line;
+    padding-left: 20px;
+
+}
+.your-list a, .your-account-list a{
+    color: black;
+    font-size: 13px;
+}
+.list-head a{
+    font-size: 16px;
+    font-weight: 700;
+}
+#sign-in-text{
+    font-size: 12px;
+}
+.new-start a{
+    color: $link-color;
+}
+.your-list a:hover, .your-account-list a:hover{
+    color: $link-hover;
+    text-decoration: underline;
+}
+
+// *********** Hover Element End ****************
+
+
+
+// ********** nav-list-wrapper Start ********** 
+.nav-list-wrapper{
+    background-color: $secondary;
+    padding: 6px ;
+    height: 30px;
+    
+}
+.nav-category-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+
+}
+.nav-category-list>li{
+   border: 1px solid transparent;
+   padding: 6px 7px;
+ }
+.nav-category-list>li:hover{
+   @include hover-border;
+}
+.nav-category-list>li>a{
+    color: white;
+}
+.everyday-deal{
+    background: url(./Images/new-deals-everyday.png) no-repeat;
+    background-position: 7px -11px;
+    background-size: 440px;
+    width: 29%;
+    height: 21px;
+    position: absolute;
+
+}
+.nav-ca-last{
+    width: 30%;
+    height: 17px;
+    margin-left: 30px;
+}
+// ********** Top-wrapper Start ********** 
+.top-wrapper{
+    position: relative;
+    margin-bottom: 40%;
+}
+.banner-image img{
+    width: 100%;
+    height: auto;
+}
+.lg-container{
+    @include large-container;
+}
+.xl-container{
+    @include xl-container;
+}
+.fav-wrapper{
+    @include fluid-container;
+    
+    position: absolute;
+    top: 50%;
+
+}
+
+// ********** Top-wrapper End ********** 
+
+// ********** Today Deal's Wrapper start **********
+
+
+.overflow-x-deals{
+    background-color: $container-background;
+    color: black;
+    height: 330px ;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+   
+}
+.title-wrapper{
+    display: block;
+}
+.title-wrapper>div{
+    display: inline-block;
+    padding-left: 30px; 
+}
+.carousel-list-slider>ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+       
+}
+.carousel-list-slider>ul>li{
+    width: 20%;
+    padding-left: 20px;
+}
+.carousel-image-container{
+    width: 150px;
+    margin: auto;
+}
+.carousel-image-container img{
+    width: 100%;
+    height: 150px;
+    margin-bottom: 30px;
+}
+.carousel-text-container span:first-child{
+    background-color: red;
+    color: white;
+    padding: 5px;
+}
+.carousel-text-container span:nth-child(2){
+    color: red;
+    font-weight: 800;
+}
+.carousel-text-container span:last-child{
+    color: black;
+    float: left;
+    margin-top: 15px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.video-game-wrapper {
+    height: 245px;
+    padding: 20px 0px;
+}
+
+// ********** Today Deal's Wrapper End ********** 
+
+// ********** Popular Wrapper Start ********** 
+.flex-fluid-container{
+    @include fluid-container;
+}
+.empty:empty{
+    display: block;
+}
+.popular-list-wrapper{
+    margin-bottom: 20px;
+}
+// ********** Popular Wrapper End ********** 
+
+// ********** Mother's day Wrapper Start ********** 
+
+.mother-day-img-cont{
+    width: 215px;
+    
+}
+.mother-day-img-cont img{
+    width: 100%;
+    height: 225px;
+    margin-top: 15px;
+}
+// ********** Mother's Day Wrapper End ********** 
+
+
+// ********** Popular books Wrapper Start ********** 
+.book-wrapper{
+    margin: 18px 0px;
+}
+.popular-books-wrapper {
+    width: 75% !important;
+    display: inline-block;
+    height: 280px;
+}
+.sponsor-wrapper{
+    width: 22%;
+    float: right;
+    padding: 15px;
+    position: relative;
+    background-color: $container-background;
+
+}
+.popular-book-img-cont{
+    width: 180px;
+    
+}
+.popular-book-img-cont img{
+    width: 100%;
+    height: 180px;
+   
+}
+.sponsor-icon{
+    width: 70px;
+    position: absolute;
+    right: 25px;
+    bottom: -18px;
+    font-size: 11px;
+    background: url(./Images/info_icon_sprite.png) 57px -11px no-repeat transparent;
+}
+.sponsor-wrapper::after{
+    content: "";
+    clear: both;
+    display: table;
+
+}
+// ********** Popular books Wrapper End ********** 
+
+// ********** Browsing History Wrapper Start **********
+
+.browsing-history{
+    background-color:  $container-background;
+    padding: 14px 0px;
+    
+}
+.history-container{
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    padding: 0 20px;
+    height: 500px;
+}
+
+.history-list-carousel a{
+    color: #007185;
+}
+.history-list-carousel a:hover{
+    color: $link-hover;
+    cursor: pointer;
+}
+.history-text-link{
+    white-space: normal;
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
+    
+    
+}
+.history-text-link a:hover{
+    white-space: normal;
+    line-height: 1.5;
+    
+}
+.review-count{
+    float: right;
+    position: absolute;
+    right: -11px;
+    bottom: -22px;
+    color: #007185;
+}
+.rating{
+    position: relative;
+}
+.history-list-carousel>li{
+    width: 200px;
+    padding: 0px 50px;
+}
+.star-rating{
+    position: absolute;
+    background: url(./Images/rating.png)no-repeat -680px -716px;
+	width: 120px;
+	height: 22px;
+}
+.price{
+    position: relative;
+    top: 26px;
+    margin-top: 10px;
+}
+.dollar-sign{
+    font-size: 15px;
+    float: left;
+}
+.actual-price{
+    font-size: 20px;
+    float: left;
+}
+.sign-in-button-wrap{
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    border-top: 1px solid #ddd;
+}
+.sign-in-button {
+    background: url(./Images/sign-in-button.png)no-repeat -10px -170px;
+	width: 230px;
+	height: 28px;
+    margin: auto;
+}
+.action-inner{
+    cursor: pointer;
+    background-position: right -170px;
+    display: block;
+    height: 28px;
+    position: relative;
+    color: #000;
+    font-size: 12px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffe093;
+}
+    
+
+// ********** Browsing History Wrapper End ********** 
+
+// ********** Back To Top Wrapper Start ********** 
+.back-to-top{
+    background-color: $light-bg;
+    color: white;
+    text-align: center;
+    height: 50px;
+    display: block;
+    line-height: 4;
+}
+.website-links{
+    background-color: $secondary;
+    height: 500px;
+}
+.affiliates{
+    background-color: $dark-bg;
+    height: 500px;
+}
+// ********** Back To Top Wrapper End ********** 
+
+
+// ************** Media Query Start **************
+@media screen and (min-width: 1395px)  {
+    .nav-wrapper-container>li:nth-child(1){
+        width: 23%; 
+    }
+    .nav-wrapper-container>li:nth-child(2){
+        width: 45%;
+    }
+    .nav-wrapper-container>li:nth-child(3){
+        width: 28%;
+    }
+    .navbar-list-right > li {
+        padding: 8px 20px;
+    }
+    .nav-category-list {
+        margin: 0px 18px;
+    }
+
+}
+
+// ************** Media Query End **************
+
+
