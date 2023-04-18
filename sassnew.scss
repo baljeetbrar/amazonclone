@@ -263,8 +263,9 @@ html, body {
     width: 32px;
     height: 20px;
     position: absolute;
-    top: 9px;
-    left: -18px;
+    top: 10px;
+    left: -14px;
+    transform: scale(0.7);
 }
 .flag-label{
     position: relative;
@@ -330,7 +331,7 @@ html, body {
 
 // ********* Hover element Start *************
 .language-selector {
-    display: none;
+    display: block;
     width: 220px;
     color: black !important;
     background-color: rgb(255, 255, 255);
@@ -797,12 +798,12 @@ content: "";
 }
 .affiliates{
     background-color: $dark-bg;
-    height: 500px;
+    height: 330px;
 }
 // ********** Back To Top Wrapper End ********** 
 
 // ********** Footer List Wrapper Start **********
-.footer-vertical-column{
+.footer-vertical-column, .affiliates-links{
     max-width: 1000px;
     display: flex;
     margin: auto;
@@ -810,6 +811,17 @@ content: "";
     padding-top: 30px;
     line-height: 2;
    
+}
+.affiliates-links-wrap{
+    gap: 0px 97px;
+}
+.advertisement-link{
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 15px 4px;
+}
+.nav-a-light{
+    color: #999;
 }
 .footer-head{
     font-family: inherit;
@@ -840,20 +852,40 @@ content: "";
     height: 23px;
     margin: 15px auto;
 }
+.nav-base-button{
+    border: 1px solid #9b9b9b;
+    padding: 15px 30px;
+    position: relative;
+}
+
 .nav-globe-img{
     background: url(./Images/flag-logo.png)-155px -104px no-repeat;
     width: 26px;
     height: 26px;
     position: absolute;
-    left: 0;
+    left: 5px;
+    transform: scale(.5);
+    bottom: 10px;
+}
+.nav-base-flag{
+    top: 12px;
+    left: 1px;
+    transform: scale(0.6);
 }
 
 .nav-base-lang{
     color: white;
 }
-.nav-base-button{
-    border: 1px solid #9b9b9b;
-    padding: 15px 30px;
+.copyright-wrapper{
+    text-align: center;
+    color: white;
+    padding: 20px 0px !important;
+    font-size: 12px;
+}
+
+.copyright-link{
+    margin-right: 20px;
+    line-height: 1.8;
 }
 // ********** Footer List Wrapper End ********** 
 
