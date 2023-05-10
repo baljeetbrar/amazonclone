@@ -95,6 +95,8 @@ $sm-container: 540px;
         text-decoration: underline;
     }
 }
+
+
 ul{
     list-style-type: none;
     margin: 0px;
@@ -569,11 +571,14 @@ content: "";
     display: inline-block;
     padding-left: 30px; 
 }
+
+
 .carousel-list-slider>ul{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+
        
 }
 .carousel-list-slider>ul>li{
@@ -613,6 +618,72 @@ content: "";
     height: 245px;
     padding: 20px 0px;
 }
+
+
+// ********** Hover start ********** 
+
+.side-arrow{
+    position: relative;
+}
+.side-arrow:hover .feed-left,
+.side-arrow:hover .feed-right {
+  display: block;
+  transition: all 3s ease-in-out;
+  opacity: 1;
+}
+
+.side-arrow .feed-left,
+.side-arrow .feed-right {
+  opacity: 0;
+}
+    .feed-left{
+        display: none;
+        background: rgb(255 255 255 / 94%);
+        border-radius: 4px;
+        content: "";
+        height: 80px;
+        pointer-events: none;
+        position: absolute;
+        width: 50px;
+        left: 0px;
+        top: 40px;
+        z-index: 5;
+    
+     }
+     .feed-right{
+        display: none;
+        background: rgb(255 255 255 / 94%);
+        border-radius: 4px;
+        content: "";
+        height: 80px;
+        pointer-events: none;
+        position: absolute;
+        width: 50px;
+        right: 0px;
+        top: 40px;
+        z-index: 5;
+     } 
+     .gw-icon-l{
+        position: absolute;
+        background: url(./Images/hover-arrow.png)no-repeat 0 0;
+        width: 39px;
+        height: 66px;
+        scale: 0.3;
+        left: 8px;
+        top: 5px;
+     }
+     .gw-icon-r{
+        position: absolute;
+        background: url(./Images/hover-arrow.png)no-repeat -42px 0;
+        width: 39px;
+        height: 66px;
+        scale: 0.3;
+        right:8px;
+        top: 5px;
+     }
+
+
+// ********** Hover End ********** 
 
 // ********** Today Deal's Wrapper End ********** 
 
