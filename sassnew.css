@@ -971,15 +971,37 @@ input[type=radio] {
   line-height: 1.8;
 }
 
-@media screen and (min-width: 1395px) {
+@media screen and (min-width: 1201px) and (max-width: 1395px) {
   .nav-wrapper-container > li:nth-child(1) {
-    width: 23%;
+    width: 26%;
   }
   .nav-wrapper-container > li:nth-child(2) {
-    width: 45%;
+    width: 35%;
   }
   .nav-wrapper-container > li:nth-child(3) {
-    width: 28%;
+    width: 32%;
+  }
+  .navbar-list-right > li {
+    padding: 8px 20px;
+  }
+  .nav-category-list {
+    margin: 0px 18px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .nav-wrapper-container > li:nth-child(1) {
+    width: 26%;
+  }
+  .nav-wrapper-container > li:nth-child(2) {
+    width: 38%;
+  }
+  .nav-wrapper-container > li:nth-child(3) {
+    width: 33%;
+  }
+  .nav-search-label-sprite {
+    top: 5px;
+    right: 0px;
+    scale: 0.7;
   }
   .navbar-list-right > li {
     padding: 8px 20px;
